@@ -1,0 +1,84 @@
+@{
+    ViewData["Title"] = "Assignment";
+    //Layout = "~/PersonUT/Views/Shared/_Layout.cshtml";
+}
+@model Core_MVC.Models.Person
+
+<h2>Delete</h2>
+<div>
+    <center>
+        <form asp-action="Delete"  asp-controller="Rookies" method="GET">
+            <table>
+                <tr>
+                    <td>First Name</td>
+                    <td>
+                        <input asp-for="FirstName" />
+                        <span asp-validation-for="FirstName" asp-value-for="FirstName"></span>
+                    </td>
+                    <td>Last Name</td>
+                    <td>
+                        <input asp-for="LastName" />
+                        <span asp-validation-for="LastName" asp-value-for="LastName"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        Male: <input asp-for="Gender" type="radio" value="true"/>
+                        Female: <input asp-for="Gender" value="false" type="radio"/>
+                        <span asp-validation-for="Gender"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Date Of Birth</td>
+                    <td>
+                        <input asp-for="DateOfBirth" type="date" asp-value-for="DateOfBirth"/>
+                        <span asp-validation-for="DateOfBirth"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>
+                        <input asp-for="Phone" type="number"  asp-value-for="Phone" />
+                        <span asp-validation-for="Phone"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>BirthPlace</td>
+                    <td>
+                        <input asp-for="BirthPlace" asp-value-for="BirthPlace"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td>
+                        <input asp-for="Age" type="number" asp-value-for="Age"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Graduated</td>
+                    <td>
+                        Yes: <input asp-for="IsGradated" type="radio" value="true"/>
+                        No: <input asp-for="IsGradated" type="radio"  value="false"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>
+                        <input asp-for="Email" asp-value-for="Email" type="text" />
+                        <span asp-validation-for="Email" ></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <button type="submit">Delete</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
+</div>
+<div>
+    @Html.ActionLink("List members", "Index")
+</div>
